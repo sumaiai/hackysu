@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="winky-sans-font">
+    <header class="bg-black">
+        <nav>
+            <div class="navbar shadow-sm">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content text-xl font-bold rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>Express</a></li>
+                            <li><a>Burn</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost font-bold text-2xl text-white">Happy Happy Happy</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-xl font-bold text-white">
+                        <li><a>Home</a></li>
+                        <li><a>Express</a></li>
+                        <li><a>Burn</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-blue-300 rounded-full">Catalyst</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <section class="hero min-h-screen">
+            <div class="hero-overlay">
+                <video autoplay muted loop id="myVideo">
+                    <source src="assets/sad.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <div class="hero-content text-neutral-content text-center">
+                <div class="">
+                    <h1 class="winky-sans-font text-9xl font-bold">Happiness Comes In Wave! See it Found You Again!</h1>
+                    <h3 class="mt-5 winky-sans-font text-3xl font-bold">Now scroll down and right your feelings...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-purple-800">
+            <div class="hero min-h-screen animation">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card w-full bg-yellow-100 shadow-2xl">
+                        <div class="card-body">
+                            <fieldset class="fieldset border-none">
+                                <textarea placeholder="Write your precious thought" name="" id=""
+                                    class="text-xl font-medium" cols="90" rows="20"></textarea>
+                                <button
+                                    class=" text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">Stack</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section>
+            <button onclick="moveBox()">Throw in Trash</button>
+            <div class="container">
+                <div class="box" id="box"></div>
+                <div class="trash">🗑️</div>
+            </div>
+        </section> -->
+
+    </main>
+
+
+    <footer>
+
+    </footer>
+    <!-- <script>
+        function moveBox() {
+            let box = document.getElementById("box");
+
+            // Move the box towards the trash can
+            box.style.transform = "translate(180px, 180px) scale(0.5)";
+
+            // After animation, hide the box
+            setTimeout(() => {
+                box.classList.add("hidden");
+            }, 1000);
+        }
+    </script> -->
+</body>
+
+</html>
