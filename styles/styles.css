@@ -1,0 +1,170 @@
+.gloria-font {
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+.indie-flower-regular {
+    font-family: "Indie Flower", cursive;
+}
+
+.winky-sans-font {
+    font-family: "Winky Sans", sans-serif;
+}
+
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 24px;
+    background: black;
+    animation: blink 0.6s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+.duck {
+    position: absolute;
+    /* Start off-screen */
+    animation: walkAnimation 5s linear infinite;
+}
+
+.duck2 {
+    position: absolute;
+    /* Start off-screen */
+    animation: walkAnimation2 5s linear infinite;
+}
+
+@keyframes walkAnimation {
+    0% {
+        left: -150px;
+    }
+
+    100% {
+        left: 100vw;
+    }
+
+
+    /* Moves across the screen */
+}
+
+@keyframes walkAnimation2 {
+    0% {
+        right: 150px;
+    }
+
+    100% {
+        right: 100vw;
+    }
+
+
+    /* Moves across the screen */
+}
+
+.animation {
+    view-timeline: --subjectReveal block;
+    animation-timeline: --subjectReveal;
+
+    animation-name: appear;
+    animation-range-start: entry 25%;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+    /* Firefox requires this to apply the animation */
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+#myVideo {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    overflow-y: scroll;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.trash {
+    width: 70px;
+    height: 70px;
+    background-color: gray;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* .hidden {
+    opacity: 0;
+    pointer-events: none;
+} */
