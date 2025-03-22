@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Happy Happy</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-pri': '#179800',
+                        'btn-pri-bg': 'rgba(231, 111, 81, 0.1)',
+                        'pri-bg': '#EFEBE3'
+
+
+                    }
+                }
+            }
+        }
+    </script>
+
+    <Style>
+        .gloria-font {
+            font-family: "Gloria Hallelujah", cursive;
+        }
+
+        .indie-flower-regular {
+            font-family: "Indie Flower", cursive;
+        }
+
+        .winky-sans-font {
+            font-family: "Winky Sans", sans-serif;
+        }
+
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 24px;
+            background: black;
+            animation: blink 0.6s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .duck {
+            position: absolute;
+            /* Start off-screen */
+            animation: walkAnimation 5s linear infinite;
+        }
+
+        .duck2 {
+            position: absolute;
+            /* Start off-screen */
+            animation: walkAnimation2 5s linear infinite;
+        }
+
+        @keyframes walkAnimation {
+            0% {
+                left: -150px;
+            }
+
+            100% {
+                left: 100vw;
+            }
+
+
+            /* Moves across the screen */
+        }
+
+        @keyframes walkAnimation2 {
+            0% {
+                right: 150px;
+            }
+
+            100% {
+                right: 100vw;
+            }
+
+
+            /* Moves across the screen */
+        }
+    </Style>
+
+</head>
+
+<body class=" indie-flower-regular">
+    <header>
+        <nav>
+            <div class="navbar shadow-sm">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content text-xl font-bold rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>Express</a></li>
+                            <li><a>Burn</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost font-bold text-2xl">Happy Happy Happy</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-xl font-bold">
+                        <li><a>Home</a></li>
+                        <li><a>Express</a></li>
+                        <li><a>Burn</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-yellow-400 rounded-full">Catalyst</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main class="">
+        <section class="mt-12 p-12 text-center justify-center">
+            <div class="font-extrabold text-7xl" id="typing-text"></div>
+        </section>
+        <section class="bg-yellow-200">
+            <div class="">
+                <img class="duck" src="assets/duck_1660599.png" alt="">
+            </div>
+        </section>
+        <section class="mt-96">
+            <div>
+                <img class="duck2" src="assets/duck2.png" alt="">
+            </div>
+        </section>
+
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        const text = "Welcome To Happy Happy Happy... "; // Change this text
+        let index = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            let typingDiv = document.getElementById("typing-text");
+
+            if (!isDeleting) {
+                typingDiv.innerHTML = text.slice(0, index);
+                index++;
+            } else {
+                typingDiv.innerHTML = text.slice(0, index);
+                index--;
+            }
+
+            if (index > text.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1000); // Pause before deleting
+            } else if (index === 0) {
+                isDeleting = false;
+                setTimeout(typeEffect, 500); // Pause before typing again
+            } else {
+                setTimeout(typeEffect, 100);
+            }
+        }
+
+        typeEffect(); // Start the typing effect
+    </script>
+</body>
+
+</html>
