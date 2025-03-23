@@ -64,7 +64,7 @@
     </header>
 
 
-    <main>
+    <main class="bg-slate-950">
         <section class="hero min-h-screen">
             <div class="hero-overlay">
                 <video autoplay muted loop id="myVideo">
@@ -74,14 +74,15 @@
             </div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="">
-                    <h1 class="winky-sans-font text-9xl font-bold">Happiness comes in waves, it will find you again.
+                    <h1 class="winky-sans-font text-3xl md:text-6xl lg:text-9xl font-bold">Happiness comes in waves, it
+                        will find you again.
                     </h1>
-                    <h3 class="mt-5 winky-sans-font text-3xl font-bold">Now scroll down and write your feelings...</h3>
+                    <h3 class="mt-5 winky-sans-font text-xl font-bold">Now scroll down and write your feelings...</h3>
                 </div>
             </div>
         </section>
 
-        <section class="bg-purple-800">
+        <section class="bg-purple-800 scale-out-tr">
             <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card w-full bg-black shadow-2xl box" id="box">
@@ -89,8 +90,29 @@
                             <fieldset class="fieldset border-none">
                                 <textarea placeholder="Write your precious thought" name="" id=""
                                     class="text-xl text-white font-medium" cols="90" rows="20"></textarea>
-                                <button onclick="moveBox()"
-                                    class=" text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">Stack</button>
+                                <!-- <button onclick="moveBox()"
+                                    class=" text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">ssss</button> -->
+                                <div class="dropdown">
+                                    <div tabindex="0" role="button"
+                                        class="btn m-1 text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">
+                                        Release</div>
+                                    <ul tabindex="0"
+                                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                        <li
+                                            class="btn m-1 text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">
+                                            <a onclick="moveBox()">Trash</a>
+                                        </li>
+                                        <li
+                                            class="btn m-1 text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">
+                                            <a onclick="moveBox()">Burn</a>
+                                        </li>
+                                        <li
+                                            class="btn m-1 text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">
+                                            <a onclick="moveBox()">Break</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </fieldset>
                         </div>
                     </div>
@@ -100,7 +122,7 @@
 
 
 
-        <section class="flex w-1/2 gap-14 mx-auto">
+        <section class="lg:flex md:flex w-1/2 gap-14 mx-auto">
 
             <div class="trash w-70 h-70">
                 <img src="assets/trash.png" alt="">
