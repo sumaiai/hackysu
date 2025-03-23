@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body class="winky-sans-font">
+<body class="indie-flower-regular">
     <header class="bg-yellow-100">
         <nav>
             <div class="navbar shadow-sm">
@@ -34,23 +34,23 @@
                             </svg>
                         </div>
                         <ul tabindex="0"
-                            class="menu menu-sm dropdown-content text-xl font-bold rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
+                            class="menu menu-sm dropdown-content text-xl font-extrabold rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a href="index.html">Home</a></li>
                             <li><a>Express</a></li>
-                            <li><a>Burn</a></li>
+                            <li><a href="third.html">Burn</a></li>
                         </ul>
                     </div>
                     <a class="btn btn-ghost font-bold text-lg md:text-2xl">Happy Happy Happy</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1 text-xl font-bold">
-                        <li><a>Home</a></li>
+                    <ul class="menu menu-horizontal px-1 text-xl font-extrabold">
+                        <li><a href="index.html">Home</a></li>
                         <li><a>Express</a></li>
-                        <li><a>Burn</a></li>
+                        <li><a href="third.html">Burn</a></li>
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn bg-yellow-400 rounded-full">Catalyst</a>
+                    <a class="btn bg-yellow-400 rounded-full text-xl">Catalyst</a>
                 </div>
                 <audio id="bg-music" loop>
                     <source src="assets/happy.mp3" type="audio/mpeg">
@@ -77,7 +77,8 @@
                         It found
                         you again!
                     </h1>
-                    <h3 class="mt-5 winky-sans-font text-xl md:text-3xl font-bold">Now scroll down and right your
+                    <h3 class="mt-5 text-xl md:text-3xl lg:text-6xl font-bold">Now scroll down and right
+                        your
                         feelings...</h3>
                 </div>
             </div>
@@ -89,14 +90,22 @@
                     <div class="card w-full bg-yellow-100 shadow-2xl">
                         <div class="card-body">
                             <fieldset class="fieldset border-none">
-                                <textarea placeholder="Write your precious thought" name="" id=""
+                                <textarea placeholder="Write your precious thought" name="" id="text"
                                     class="text-xl font-medium" cols="90" rows="20"></textarea>
-                                <button
+                                <button id="post"
                                     class=" text-2xl bg-orange-300 p-2 text-white font-bold mt-4 rounded-full">Stack</button>
                             </fieldset>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section>
+            <div id="memories" class="bg-purple-800 h-full w-1/2 mx-auto rounded-lg p-8 text-3xl text-white font-bold">
+                <h3 class="text-yellow-200">Oops, We Did It Again – The Best Memories Live Here!</h3>
+
+
+
             </div>
         </section>
 
@@ -127,6 +136,20 @@
             });
         });
     </script>
+    <script>
+        document.getElementById('post')
+            .addEventListener('click', function () {
+                const com = document.getElementById('text');
+                const ucom = com.value
+                const commentcon = document.getElementById("memories")
+                const commp = document.createElement('li')
+                commp.classList.add('comment')
+                commp.innerText = ucom
+                commentcon.appendChild(commp)
+                com.value = '';
+            })
+    </script>
+
 </body>
 
 </html>

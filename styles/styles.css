@@ -158,3 +158,18 @@ textarea {
     opacity: 0;
     pointer-events: none;
 } */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#memories li::before {
+    content: "❤️";
+    /* Heart symbol */
+    margin-right: 8px;
+}
+
+#quote .card {
+    background-color: hotpink;
+}
