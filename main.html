@@ -52,6 +52,10 @@
                 <div class="navbar-end">
                     <a class="btn bg-yellow-400 rounded-full">Catalyst</a>
                 </div>
+                <audio id="bg-music" loop>
+                    <source src="assets/happy.mp3" type="audio/mpeg">
+                </audio>
+                <button id="toggle-music" class="text-white">⏸</button>
             </div>
         </nav>
 
@@ -62,20 +66,21 @@
         <section class="hero min-h-screen">
             <div class="hero-overlay">
                 <video autoplay muted loop id="myVideo">
-                    <source src="assets/front.mp4" type="video/mp4">
+                    <source src="assets/front.webm" type="video/mp4">
                     Your browser does not support HTML5 video.
                 </video>
             </div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="">
-                    <h1 class="winky-sans-font text-9xl font-bold">Happiness Comes In Wave! See it Found You Again!</h1>
+                    <h1 class="winky-sans-font text-9xl font-bold">Happiness comes in waves, see? It found you again!
+                    </h1>
                     <h3 class="mt-5 winky-sans-font text-3xl font-bold">Now scroll down and right your feelings...</h3>
                 </div>
             </div>
         </section>
 
         <section class="bg-orange-400">
-            <div class="hero min-h-screen animation">
+            <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card w-full bg-yellow-100 shadow-2xl">
                         <div class="card-body">
@@ -90,13 +95,18 @@
                 </div>
             </div>
         </section>
-        <!-- <section>
+        <section>
             <button onclick="moveBox()">Throw in Trash</button>
             <div class="container">
                 <div class="box" id="box"></div>
-                <div class="trash">🗑️</div>
+                <div class="trash"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                    </svg>
+                </div>
             </div>
-        </section> -->
+        </section>
 
     </main>
 
@@ -104,19 +114,27 @@
     <footer>
 
     </footer>
-    <!-- <script>
-        function moveBox() {
-            let box = document.getElementById("box");
 
-            // Move the box towards the trash can
-            box.style.transform = "translate(180px, 180px) scale(0.5)";
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let music = document.getElementById("bg-music");
+            let button = document.getElementById("toggle-music");
 
-            // After animation, hide the box
-            setTimeout(() => {
-                box.classList.add("hidden");
-            }, 1000);
-        }
-    </script> -->
+            // Ensure music starts playing on page load
+            music.play().catch(error => console.log("Autoplay blocked:", error));
+
+            // Toggle Play/Pause
+            button.addEventListener("click", () => {
+                if (music.paused) {
+                    music.play();
+                    button.textContent = "⏸";
+                } else {
+                    music.pause();
+                    button.textContent = "▶";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

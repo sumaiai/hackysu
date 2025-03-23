@@ -21,6 +21,8 @@
 </head>
 
 <body class="winky-sans-font">
+
+
     <header class="bg-black">
         <nav>
             <div class="navbar shadow-sm">
@@ -52,6 +54,10 @@
                 <div class="navbar-end">
                     <a class="btn bg-blue-300 rounded-full">Catalyst</a>
                 </div>
+                <audio id="bg-music" loop>
+                    <source src="assets/sad.mp3" type="audio/mpeg">
+                </audio>
+                <button id="toggle-music" class="text-white">⏸</button>
             </div>
         </nav>
 
@@ -62,27 +68,28 @@
         <section class="hero min-h-screen">
             <div class="hero-overlay">
                 <video autoplay muted loop id="myVideo">
-                    <source src="assets/sad.mp4" type="video/mp4">
+                    <source src="assets/sad.webm" type="video/mp4">
                     Your browser does not support HTML5 video.
                 </video>
             </div>
             <div class="hero-content text-neutral-content text-center">
                 <div class="">
-                    <h1 class="winky-sans-font text-9xl font-bold">Happiness Comes In Wave! See it Found You Again!</h1>
-                    <h3 class="mt-5 winky-sans-font text-3xl font-bold">Now scroll down and right your feelings...</h3>
+                    <h1 class="winky-sans-font text-9xl font-bold">Happiness comes in waves, it will find you again.
+                    </h1>
+                    <h3 class="mt-5 winky-sans-font text-3xl font-bold">Now scroll down and write your feelings...</h3>
                 </div>
             </div>
         </section>
 
         <section class="bg-purple-800">
-            <div class="hero min-h-screen animation">
+            <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="card w-full bg-yellow-100 shadow-2xl">
+                    <div class="card w-full bg-black shadow-2xl box" id="box">
                         <div class="card-body">
                             <fieldset class="fieldset border-none">
                                 <textarea placeholder="Write your precious thought" name="" id=""
-                                    class="text-xl font-medium" cols="90" rows="20"></textarea>
-                                <button
+                                    class="text-xl text-white font-medium" cols="90" rows="20"></textarea>
+                                <button onclick="moveBox()"
                                     class=" text-2xl bg-blue-900 p-2 text-white font-bold mt-4 rounded-full">Stack</button>
                             </fieldset>
                         </div>
@@ -90,13 +97,26 @@
                 </div>
             </div>
         </section>
-        <!-- <section>
-            <button onclick="moveBox()">Throw in Trash</button>
-            <div class="container">
-                <div class="box" id="box"></div>
-                <div class="trash">🗑️</div>
+
+
+
+        <section class="flex w-1/2 gap-14 mx-auto">
+
+            <div class="trash w-70 h-70">
+                <img src="assets/trash.png" alt="">
             </div>
-        </section> -->
+
+
+            <div class="fire w-70 h-70">
+                <img src="assets/fire.png" alt="">
+            </div>
+
+
+            <div class="break w-70 h-70">
+                <img src="assets/glass.png" alt="">
+            </div>
+
+        </section>
 
     </main>
 
@@ -117,6 +137,41 @@
             }, 1000);
         }
     </script> -->
+    <script>
+        function moveBox() {
+            let box = document.getElementById("box");
+
+            // Move the box towards the trash can
+            box.style.transform = "translate(180px, 180px) scale(0.5)";
+
+            // After animation, hide the box
+            setTimeout(() => {
+                box.classList.add("hidden");
+            }, 1000);
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let music = document.getElementById("bg-music");
+            let button = document.getElementById("toggle-music");
+
+            // Ensure music starts playing on page load
+            music.play().catch(error => console.log("Autoplay blocked:", error));
+
+            // Toggle Play/Pause
+            button.addEventListener("click", () => {
+                if (music.paused) {
+                    music.play();
+                    button.textContent = "⏸";
+                } else {
+                    music.pause();
+                    button.textContent = "▶";
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
